@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assignment 4</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.concisecss.com/concise-utils/concise-utils.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<div class="container" id="container">
+  <div class="row _mbm _mts">
+    <div class="col-md-8 ml-auto mr-auto">
+      <textarea id="new-search-field" class="search-field _mbxs"></textarea>
+    </div>
+    <div class="col-md-4 ml-auto mr-auto">
+      <button id="search-button" class="btn btn-primary">Search</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Repositories</h2>
+      <div class="_mts" id="repos-list"></div>
+    </div>
+    <div class="col-md-6">
+      <h2>Search History</h2>
+      <div class="_mts" id="search-list"></div>
+    </div>
+  </div>
+</div>
+
+<template id="repos-template">
+  {{#each repos}}
+    <div class="row">
+      <div class="col-md-12 ml-auto mr-auto">
+        <div class="_bt1 _pts">
+            <p>{{name}}</p>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</template>
+
+<template id="searches-template">
+  {{#each searches}}
+    <div class="row">
+      <div class="col-md-12 ml-auto mr-auto">
+        <div class="_bt1 _pts">
+            <p class="text-right _ts1">{{createdAt}}</p>
+            <p>{{term}}</p>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</template>
+
+<script src="src/jquery-3.2.1.js"></script>
+<script src="src/handlebars-v4.0.10.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="src/main.js"></script>
+
+</body>
+</html>
